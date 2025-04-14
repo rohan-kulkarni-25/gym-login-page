@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Pages Site</title>
+</head>
+<body>
+
+<div class="login-container">
+  <div class="login-form">
+    <div class="login-header">
+      <h2>Gym Login</h2>
+      <div class="logo">
+        <svg viewBox="0 0 24 24" width="48" height="48">
+          <path fill="#00B07B" d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14 4.14 5.57 2 7.71 3.43 9.14 2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22 14.86 20.57 16.29 22 18.43 19.86 19.86 18.43 18.43 19.86 16.29 22 14.86 20.57z"/>
+        </svg>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Enter your username">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password">
+    </div>
+    <button id="login-button">Login</button>
+    <div class="reset-password">
+      <a href="#" id="reset-link">Forgot password?</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 360px;
+    font-family: 'Roboto', Arial, sans-serif;
+  }
+  
+  .login-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 176, 123, 0.48);
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 12px rgba(0, 176, 123, 0.2);
+  }
+  
+  .login-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    color: #FFFFFF;
+  }
+  
+  .login-header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .form-group {
+    margin-bottom: 16px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #FFFFFF;
+    font-weight: 500;
+  }
+  
+  input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid rgba(0, 176, 123, 0.48);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #00B07B;
+    box-shadow: 0 0 0 2px rgba(0, 176, 123, 0.3);
+  }
+  
+  input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00B07B;
+    border: none;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #00995E;
+  }
+  
+  .reset-password {
+    margin-top: 16px;
+    text-align: center;
+  }
+  
+  #reset-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  #reset-link:hover {
+    color: #00B07B;
+    text-decoration: underline;
+  }
+</style>
+
+<script>
+  document.getElementById('login-button').addEventListener('click', function() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    
+    if (!username || !password) {
+      alert('Please enter both username and password');
+      return;
+    }
+    
+    // In a real application, you would send these credentials to your server
+    console.log('Login attempt with:', { username, password });
+  });
+  
+  document.getElementById('reset-link').addEventListener('click', function(e) {
+    e.preventDefault();
+    // In a real application, this would open a password reset flow
+    alert('Password reset functionality would be triggered here');
+  });
+</script>
+
+</body>
+</html>
